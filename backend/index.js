@@ -4,6 +4,10 @@ const app = express();
 
 const port = 2620;
 
+const connectDB = require("./config/mongoose");
+
+//DATABASE CONNECTION
+connectDB();
 // TO PUT AlL ENTERED VALUES IN BODY KEY
 app.use(express.urlencoded({ extended: true }));
 
