@@ -8,19 +8,19 @@ const connectDB = require("./config/mongoose");
 
 //DATABASE CONNECTION
 connectDB();
+
+// IT WILL PARSE .body
+app.use(express.json());
+
 // TO PUT AlL ENTERED VALUES IN BODY KEY
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/test", (req, res) => {
-  res.json({
-    message: "Hello! Server is running 🚀, done by nidhi raj",
-    status: "success",
-  });
-});
+//ENTRY POINT
+app.use("/", require("./routes/index"));
 
-app.listen(port, (err) => {
-  if (err) {
-    console.log(err);
+app.listen(port, (error) => {
+  if (error) {
+    console.log(error);
   }
   console.log("Firing up the express server on: ", port);
 });
