@@ -6,8 +6,12 @@ const port = 2620;
 
 const connectDB = require("./config/mongoose");
 
+const cors = require("cors");
+
 //DATABASE CONNECTION
 connectDB();
+// CORS MIDDLEWARE
+app.use(cors());
 
 // IT WILL PARSE .body
 app.use(express.json());
