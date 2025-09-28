@@ -49,3 +49,24 @@ tbody tr:hover {
 tbody tr:last-child td {
   border-bottom: none;
 }
+.actionButtons {
+  gap: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+.actionButtons button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+.viewBtn {
+  background-color: rgb(113, 200, 113);
+}
+.updateBtn {
+  background-color: rgb(209, 209, 116);
+}
+.deleteBtn {
+  background-color: rgb(213, 115, 115);
+}
