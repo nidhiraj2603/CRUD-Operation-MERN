@@ -6,9 +6,9 @@ import axios from "axios";
 export const Modal = ({ show, setShow, data }) => {
   const student = data.filter((stud) => stud._id == show.id);
   const [studentData, setStudentData] = useState(student[0]);
-  const updateHandler = () => {
+  const updateHandler = async () => {
     try {
-      const response = axios.put(
+      const response = await axios.put(
         "http://localhost:2620/student/" + show.id,
         studentData
       );
@@ -18,12 +18,16 @@ export const Modal = ({ show, setShow, data }) => {
     }
     setShow((prev) => ({ ...prev, view: false }));
   };
-  const createHandler = () => {
+  const createHandler = async () => {
     try {
-      const response = axios.post("http://localhost:2620/student", studentData);
+      const response = await axios.post(
+        "http://localhost:2620/student",
+        studentData
+      );
     } catch (error) {
       console.log(error);
     }
+
     setShow((prev) => ({ ...prev, view: false }));
   };
   return (

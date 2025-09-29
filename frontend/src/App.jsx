@@ -19,7 +19,7 @@ function App() {
       }
     };
     fetchStudents();
-  }, []);
+  }, [show]);
   const viewHandler = (id) => {
     setShow({
       view: true,
@@ -34,12 +34,15 @@ function App() {
       id: id,
     });
   };
-  const deleteHandler = (id) => {
+  const deleteHandler = async (id) => {
     try {
-      const response = axios.delete("http://localhost:2620/student/" + id);
+      const response = await axios.delete(
+        "http://localhost:2620/student/" + id
+      );
     } catch (error) {
       console.log(error);
     }
+    setShow((prev) => ({ ...prev, view: false }));
   };
   const createHandler = () => {
     setShow({
