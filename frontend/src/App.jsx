@@ -41,9 +41,21 @@ function App() {
       console.log(error);
     }
   };
+  const createHandler = () => {
+    setShow({
+      view: true,
+      type: "create",
+      id: "",
+    });
+  };
   return (
     <>
       <div className="mainContainer">
+        <div className="createBtnConatiner">
+          <button className="createBtn" onClick={createHandler}>
+            Create
+          </button>
+        </div>
         <div className="tableContainer">
           <table border="1">
             <thead>

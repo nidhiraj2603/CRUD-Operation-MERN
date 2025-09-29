@@ -18,6 +18,14 @@ export const Modal = ({ show, setShow, data }) => {
     }
     setShow((prev) => ({ ...prev, view: false }));
   };
+  const createHandler = () => {
+    try {
+      const response = axios.post("http://localhost:2620/student", studentData);
+    } catch (error) {
+      console.log(error);
+    }
+    setShow((prev) => ({ ...prev, view: false }));
+  };
   return (
     <div className="modal-overlay">
       <div className="modal-box">
@@ -29,7 +37,7 @@ export const Modal = ({ show, setShow, data }) => {
             <input
               type="text"
               placeholder="Enter name"
-              value={studentData.name}
+              value={studentData?.name}
               onChange={(e) => {
                 setStudentData((prev) => ({ ...prev, name: e.target.value }));
               }}
@@ -42,7 +50,7 @@ export const Modal = ({ show, setShow, data }) => {
             <input
               type="text"
               placeholder="Enter gender"
-              value={studentData.gender}
+              value={studentData?.gender}
               onChange={(e) => {
                 setStudentData((prev) => ({ ...prev, gender: e.target.value }));
               }}
@@ -55,7 +63,7 @@ export const Modal = ({ show, setShow, data }) => {
             <input
               type="text"
               placeholder="Enter contact number"
-              value={studentData.contactNumber}
+              value={studentData?.contactNumber}
               onChange={(e) => {
                 setStudentData((prev) => ({
                   ...prev,
@@ -71,7 +79,7 @@ export const Modal = ({ show, setShow, data }) => {
             <input
               type="text"
               placeholder="Enter parent name"
-              value={studentData.parentName}
+              value={studentData?.parentName}
               onChange={(e) => {
                 setStudentData((prev) => ({
                   ...prev,
@@ -87,7 +95,7 @@ export const Modal = ({ show, setShow, data }) => {
             <input
               type="text"
               placeholder="Enter standard"
-              value={studentData.standard}
+              value={studentData?.standard}
               onChange={(e) => {
                 setStudentData((prev) => ({
                   ...prev,
@@ -103,7 +111,7 @@ export const Modal = ({ show, setShow, data }) => {
             <input
               type="text"
               placeholder="Enter student ID"
-              value={studentData.studentId}
+              value={studentData?.studentId}
               onChange={(e) => {
                 setStudentData((prev) => ({
                   ...prev,
@@ -127,6 +135,12 @@ export const Modal = ({ show, setShow, data }) => {
           {show.type === "update" && (
             <button className="btn btn-save" onClick={updateHandler}>
               Save
+            </button>
+          )}
+
+          {show.type === "create" && (
+            <button className="btn btn-save" onClick={createHandler}>
+              Create
             </button>
           )}
         </div>

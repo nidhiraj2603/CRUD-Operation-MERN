@@ -5,6 +5,7 @@
   min-height: 100vh;
   background: #f4f6f9; /* light grey background */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  flex-direction: column;
 }
 
 .tableContainer {
@@ -69,4 +70,24 @@ tbody tr:last-child td {
 }
 .deleteBtn {
   background-color: rgb(213, 115, 115);
+}
+.createBtn {
+  background-color: #82bbf7;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+  width: 200px;
+}
+.createBtnConatiner {
+  display: flex;
+  justify-content: end;
+  width: 75%;
+  margin-bottom: 10px;
+}
+.createBtn::before {
+  content: "+";
+  margin-right: 6px;
+  font-weight: bold;
 }
