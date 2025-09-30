@@ -51,7 +51,18 @@ export const Modal = ({ show, setShow, data }) => {
 
           <div className="form-group">
             <label>Gender</label>
-            <input
+            <select
+              value={studentData?.gender}
+              onChange={(e) =>
+                setStudentData({ ...studentData, gender: e.target.value })
+              }
+            >
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            {/* <input
               type="text"
               placeholder="Enter gender"
               value={studentData?.gender}
@@ -59,7 +70,7 @@ export const Modal = ({ show, setShow, data }) => {
                 setStudentData((prev) => ({ ...prev, gender: e.target.value }));
               }}
               disabled={show.type === "view"}
-            />
+            /> */}
           </div>
 
           <div className="form-group">

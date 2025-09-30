@@ -54,6 +54,9 @@ function App() {
   return (
     <>
       <div className="mainContainer">
+        <div className="heading">
+          <h1>Student record Details</h1>
+        </div>
         <div className="createBtnConatiner">
           <button className="createBtn" onClick={createHandler}>
             Create
@@ -94,7 +97,7 @@ function App() {
                           className="updateBtn"
                           onClick={() => updateHandler(student._id)}
                         >
-                          Update
+                          Edit
                         </button>
                         <button
                           className="deleteBtn"

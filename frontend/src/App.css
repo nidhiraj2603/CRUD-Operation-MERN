@@ -14,7 +14,7 @@
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  border: 3px solid rgb(8, 8, 8);
+  /* border: 3px solid rgb(8, 8, 8); */
 }
 
 table {
@@ -22,6 +22,13 @@ table {
   border-collapse: collapse;
   overflow: hidden;
   border-radius: 10px;
+  outline: 2px solid #000306; /* outline ka color aur thickness */
+  outline-offset: -1px; /* outline ko border ke paas chipka ke rakhega */
+}
+table th,
+table td {
+  border: 2px solid #444; /* inner borders darker */
+  padding: 10px;
 }
 
 thead {
@@ -91,4 +98,21 @@ tbody tr:last-child td {
   content: "+";
   margin-right: 6px;
   font-weight: bold;
+}
+.heading {
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #424274 0%, #538ff6 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.heading h1 {
+  color: #fff;
+  font-size: 2.2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
